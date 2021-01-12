@@ -1,0 +1,79 @@
+@import "mixins";
+@import "variables";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-image: url("./assets/background.jpg");
+    background-size: cover;
+    font-size: 1.6rem;
+    font-family: "Caveat", cursive;
+    color: rgb(44, 42, 43);
+}
+
+.darken-container {
+    @include darken-container(0.16);
+    width: 100%;
+    height: 100vh;
+}
+
+.button {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(77, 27, 27);
+    background: linear-gradient(#ffcc66, #ff9900);
+    border: none;
+    outline: none;
+
+    &:hover {
+        background: linear-gradient(darken(#ffcc66, 4), darken(#ff9900, 4));
+        cursor: pointer;
+    }
+
+    &--sm {
+        padding: 1rem 2rem;
+        font-size: 1.7rem;
+    }
+}
+
+.input {
+    @include darken-container(0.44);
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    color: rgb(131, 130, 130);
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    border-bottom: 2px solid rgb(114, 113, 113);
+    width: 40rem;
+
+    &:focus {
+        outline: none;
+        border-bottom: 2px solid rgb(165, 163, 163);
+        color: rgb(165, 163, 163);
+    }
+
+    &::placeholder {
+        color: rgb(114, 113, 113);
+    }
+}
+
+.black-container {
+    @include darken-container(0.44);
+    margin: 0 auto;
+    width: fit-content;
+    padding: 3rem;
+}
