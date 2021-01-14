@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  status:string = '';
 
   ngOnInit(): void {
+    this.authService.getStatusAsObservable().subscribe(
+      (status) => this.status = status
+    );
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

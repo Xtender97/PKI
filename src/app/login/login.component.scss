@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .container {
     display: flex;
     flex-direction: column;
@@ -17,7 +19,7 @@
     justify-self:flex-end;
 
     .label {
-        color: rgb(131, 130, 130);
+        color: $light-text;
         font-size: 2rem;
         margin-right: 2rem;
     }

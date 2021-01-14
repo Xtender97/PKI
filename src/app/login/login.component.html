@@ -1,13 +1,10 @@
 <div class="black-container container">
-
     <img src="../../assets/logo.jpg" class="logo" alt="logo">
-
-    <input type="text" class="input" placeholder="Korisnicko ime">
-    <input type="text" class="input" value="Lozinka">
-
-    <button class="button">Prijavite se</button>
+    <input type="text" class="input" placeholder="Korisnicko ime" [(ngModel)]="username">
+    <input type="password" class="input" placeholder="Lozinka" [(ngModel)]="password">
+    <button class="button" (click)="login()">Prijavite se</button>
     <div class="nav-block">
         <span class="label">Nemate nalog?</span>
-        <button class="button button--sm">Registrujte se</button>
+        <button routerLink="/register" class="button button--sm">Registrujte se</button>
     </div>
 </div>

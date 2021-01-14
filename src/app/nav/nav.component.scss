@@ -12,11 +12,15 @@
 .logo {
     height: 100px;
     margin-right: 2rem;
+    cursor: pointer;
+    outline: none;
 }
 
 .title {
     font-size: 6rem;
     font-weight: 700;
+    cursor: pointer;
+    outline: none;
 }
 
 .navbar {
@@ -28,12 +32,17 @@
         display: flex;
         align-items: center;
 
-        color: #242223;
+        color: $dark-text;
         border: none;
         outline: none;
         padding: .5rem;
         margin-right: 1.5rem;
         @include darken-container(0.25);
+        cursor: pointer;
+
+        &:hover {
+            @include darken-container(0.20);
+        }
     }
 
     &__icon {

@@ -16,31 +16,27 @@ html {
 }
 
 body {
-    background-image: url("./assets/background.jpg");
+    background: linear-gradient( rgba($black,.16),rgba($black,.16)), url("./assets/background-compressed.jpg");
     background-size: cover;
     font-size: 1.6rem;
-    font-family: "Caveat", cursive;
-    color: rgb(44, 42, 43);
-}
-
-.darken-container {
-    @include darken-container(0.16);
-    width: 100%;
+    font-family: $font-default;
+    color: $default-text;
     height: 100vh;
 }
+
 
 .button {
     display: inline-block;
     padding: 1.5rem 2.5rem;
     font-size: 2rem;
     font-weight: 700;
-    color: rgb(77, 27, 27);
-    background: linear-gradient(#ffcc66, #ff9900);
+    color: $brown-color;
+    background: linear-gradient($light-orange, $dark-orange);
     border: none;
     outline: none;
 
     &:hover {
-        background: linear-gradient(darken(#ffcc66, 4), darken(#ff9900, 4));
+        background: linear-gradient(darken($light-orange, 4), darken($dark-orange, 4));
         cursor: pointer;
     }
 
@@ -55,15 +51,15 @@ body {
     border: none;
     padding: 1rem 1.5rem;
     font-size: 2rem;
-    color: rgb(131, 130, 130);
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: $light-text;
+    font-family: $font-secondary;
     border-bottom: 2px solid rgb(114, 113, 113);
     width: 40rem;
 
     &:focus {
         outline: none;
-        border-bottom: 2px solid rgb(165, 163, 163);
-        color: rgb(165, 163, 163);
+        border-bottom: 2px solid $lighter-text;
+        color: $lighter-text;
     }
 
     &::placeholder {
