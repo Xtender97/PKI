@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kupac-proizvodi',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KupacProizvodiComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
+
+  goToDetails(event){
+    let imgUrl = event.target.attributes.src.textContent;
+    let name = event.target.parentElement.nextSibling.textContent;
+    let cena = event.target.parentElement.nextSibling.nextSibling.textContent;
+    this.router.navigate(['detalji'], { queryParams: {imgUrl: imgUrl, name:name, cena:cena}});
+  }
+
 
 }

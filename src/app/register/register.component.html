@@ -1,1 +1,22 @@
-<p>register works!</p>
+<div class="black-container container">
+    <img src="../../assets/logo.jpg" class="logo" alt="logo">
+
+    <input type="text" class="input" placeholder="Ime" [(ngModel)]="user.ime">
+    <input type="text" class="input" placeholder="Prezime" [(ngModel)]="user.prezime">
+    <input type="text" class="input" placeholder="Adresa" [(ngModel)]="user.adresa">
+    <input type="text" class="input" placeholder="Broj Telefona" [(ngModel)]="user.brojTelefona">
+    <input type="text" class="input" placeholder="Korisnicko ime" [(ngModel)]="user.username">
+    <input type="password" class="input" placeholder="Lozinka" [(ngModel)]="user.password">
+    <div class="select-wrapper">
+        <select class="input input--select" name="type" id="cars">
+            <option value="kupac">Kupac</option>
+            <option value="prodavac">Prodavac</option>
+        </select>
+    </div>
+ 
+    <button class="button" (click)="register()">Registrujte se</button>
+    <div class="nav-block">
+        <span class="label">Nemate nalog?</span>
+        <button routerLink="/login" class="button button--sm">Prijavite se</button>
+    </div>
+</div>

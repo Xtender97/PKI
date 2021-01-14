@@ -10,6 +10,7 @@ import { KupacProizvodiComponent } from './kupac-proizvodi/kupac-proizvodi.compo
 import { ProdavacPorudzbineComponent } from './prodavac-porudzbine/prodavac-porudzbine.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RegisterComponent } from './register/register.component';
+import { KupacDetaljiProizvodaComponent } from './kupac-detalji-proizvoda/kupac-detalji-proizvoda.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
     KupacProizvodiComponent,
     ProdavacPorudzbineComponent,
     WelcomePageComponent,
-    RegisterComponent
+    RegisterComponent,
+    KupacDetaljiProizvodaComponent
   ],
   imports: [
     BrowserModule,

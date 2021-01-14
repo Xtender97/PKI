@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
+
+  user: {
+    ime: string,
+    prezime: string,
+    adresa: string,
+    brojTelefona: string,
+    username: string,
+    password: string,
+    tip: string
+  } = {
+      ime: '',
+      prezime: '',
+      adresa: '',
+      brojTelefona: '',
+      username: '',
+      password: '',
+      tip: ''
+    };
+
 
   ngOnInit(): void {
+
+  }
+
+  register() {
+    this.router.navigate(['/login']);
   }
 
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { KupacDetaljiProizvodaComponent } from './kupac-detalji-proizvoda/kupac-detalji-proizvoda.component';
 import { KupacProizvodiComponent } from './kupac-proizvodi/kupac-proizvodi.component';
 import { LoginComponent } from './login/login.component';
 import { ProdavacPorudzbineComponent } from './prodavac-porudzbine/prodavac-porudzbine.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'kupac', component: KupacProizvodiComponent},
+  {path:'detalji', component: KupacDetaljiProizvodaComponent},
   {path:'prodavac', component: ProdavacPorudzbineComponent},
 ];
 

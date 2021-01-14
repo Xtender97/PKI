@@ -16,14 +16,13 @@ html {
 }
 
 body {
-    background: linear-gradient( rgba($black,.16),rgba($black,.16)), url("./assets/background-compressed.jpg");
+    background: linear-gradient(rgba($black, 0.16), rgba($black, 0.16)), url("./assets/background-compressed.jpg");
     background-size: cover;
     font-size: 1.6rem;
     font-family: $font-default;
     color: $default-text;
     height: 100vh;
 }
-
 
 .button {
     display: inline-block;
@@ -64,6 +63,37 @@ body {
 
     &::placeholder {
         color: rgb(114, 113, 113);
+    }
+
+    &:focus::placeholder {
+        color: $lighter-text;
+    }
+
+    &--select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        & > option {
+            background-color: $lighter-text;
+            color: $default-text;
+        }
+    }
+}
+
+.select-wrapper {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+        background-image: url("./assets/arrow-down.svg");
+        filter: invert(58%) sepia(12%) saturate(0%) hue-rotate(293deg) brightness(86%) contrast(87%);
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
     }
 }
 

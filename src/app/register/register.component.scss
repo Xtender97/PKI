@@ -1,0 +1,12 @@
+@import "../../input_container";
+
+.logo {
+    height: 10rem;
+}
+
+
+.container {
+    & > :not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
