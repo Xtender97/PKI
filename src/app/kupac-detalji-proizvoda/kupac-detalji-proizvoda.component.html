@@ -1,15 +1,19 @@
 <div class="black-container container">
-    <div class="detail__item item" >
+    <div class="detail__item item">
         <div class="item__img-container">
-            <img src="../../assets/honey4.jpg" alt="image 4" class="item__img">
+            <img src="{{imgUrl}}" alt="image 4" class="item__img">
         </div>
-        <h3 class="item__name">Zuti med</h3>
-        <h2 class="item__price">1800 din</h2>
+        <h3 class="item__name">{{name}}</h3>
+        <h2 class="item__price">{{cena}}</h2>
     </div>
     <div class="detail">
-        <h1 class="detail__title">Livadski med</h1>
-        <p class="detail__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vel velit laudantium sed tempora saepe. Ipsa obcaecati reprehenderit unde temporibus amet ullam, impedit deserunt, omnis maxime, iste repudiandae accusantium totam?</p>
-        <input type="text" class="input">
-        <button class="button"></button>
+        <h1 class="detail__title">{{name}}</h1>
+        <p class="detail__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vel velit laudantium sed
+            tempora saepe. Ipsa obcaecati reprehenderit unde temporibus amet ullam, impedit deserunt, omnis maxime, iste
+            repudiandae accusantium totam?</p>
+        <div class="detail__order">
+            <input type="text" class="input" placeholder="Kolicina" [(ngModel)]="kolicina">
+            <button class="button" (click)="addToCart()">Dodaj u korpu</button>
+        </div>
     </div>
 </div>

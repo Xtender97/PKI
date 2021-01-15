@@ -3,6 +3,7 @@ $default-text: rgb(44, 42, 43);
 $dark-text: rgb(36, 34, 35);
 $light-text: #838282;
 $lighter-text: #a5a3a3;
+$lightest-text: lighten($lighter-text, 20);
 
 $black: rgb(0, 0, 0);
 $light-orange: #ffcc66;

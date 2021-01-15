@@ -1,0 +1,61 @@
+@import "../../variables";
+@import "../../mixins";
+.container {
+    width: 80vw;
+}
+
+.table {
+    width: 100%;
+    font-size: 2.5rem;
+    color: $lightest-text;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    row-gap: 2rem;
+
+    & .header {
+        @include darken-container(0.4);
+        padding: 3rem;
+        text-align: center;
+    }
+
+    &__row {
+        background-color: $white-background;
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & div {
+            flex: 1;
+            text-align: center;
+            padding: 1.5rem;
+        }
+    }
+}
+
+.product-image {
+    height: 6rem;
+}
+
+.buy {
+    margin-top: 10rem;
+    text-align: right;
+
+    & .price-sum {
+        background-color: $white-background;
+
+        font-size: 2.5rem;
+        color: $lightest-text;
+        text-align: center;
+        font-weight: bold;
+
+        width: 30rem;
+        margin-left: auto;
+        margin-bottom: 2rem;
+        padding: 2.5rem;
+
+
+    }
+}

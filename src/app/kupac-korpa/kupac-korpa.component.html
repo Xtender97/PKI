@@ -1,0 +1,20 @@
+<div class="black-container container">
+    <div class="table">
+        <div class="header">&nbsp;</div>
+        <div class="header">Kolicina</div>
+        <div class="header">Naziv</div>
+        <div class="header">Cena</div>
+        <div class="table__row" *ngFor="let product of products">
+            <div>
+                <img class="product-image" src="{{product.imgUrl}}" alt="nesot">
+            </div>
+            <div>x{{product.kolicina}}</div>
+            <div>{{product.name}}</div>
+            <div>{{product.cena}} din</div>
+        </div>
+    </div>
+    <div class="buy">
+        <div class="price-sum">{{priceSum}} din</div>
+        <button class="button" (click)="order()">Porucite</button>
+    </div>
+</div>
