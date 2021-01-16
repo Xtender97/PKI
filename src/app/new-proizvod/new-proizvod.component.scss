@@ -1,0 +1,43 @@
+@import "../../input_container";
+
+.file-input {
+    visibility: hidden;
+    height: 0;
+    margin: 0 !important;
+}
+
+.file-input-wrapper {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+        background-image: url("../../assets/upload.svg");
+        filter: invert(58%) sepia(12%) saturate(0%) hue-rotate(293deg) brightness(86%) contrast(87%);
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+}
+
+.input__area {
+    resize: none;
+}
+
+.container {
+
+    & > :not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 5rem;
+        color: $lightest-text;
+        align-self: flex-start;
+        margin-bottom: 1rem !important; 
+    }
+}
+
+

@@ -14,6 +14,7 @@ import { KupacDetaljiProizvodaComponent } from './kupac-detalji-proizvoda/kupac-
 import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
 import { NalogComponent } from './nalog/nalog.component';
 import { GrowlComponent } from './growl/growl.component';
+import { NewProizvodComponent } from './new-proizvod/new-proizvod.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GrowlComponent } from './growl/growl.component';
     KupacDetaljiProizvodaComponent,
     KupacKorpaComponent,
     NalogComponent,
-    GrowlComponent
+    GrowlComponent,
+    NewProizvodComponent
   ],
   imports: [
     BrowserModule,

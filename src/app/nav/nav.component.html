@@ -1,12 +1,30 @@
 <div class="container">
     <img routerLink="" class="logo" src="../../assets/logo.jpg" alt="Logo" />
     <h1 routerLink="" class="title">Medenjaci</h1>
-    <h2 class="title">{{status}}</h2>
-    <div  class="navbar">
+    <div *ngIf="status=='kupac'" class="navbar">
         <button routerLink="cart" class="navbar__button">
             <span class="navbar__label" [ngClass]="numberOfProducts !== '0' ? 'cart--full': '' ">{{numberOfProducts}}</span>
             <img class="navbar__icon" src="../../assets/shopping-cart-empty-side-view.svg" alt="user" />
         </button>
+        <button routerLink="nalog" class="navbar__button">
+            <span class="navbar__label">Marko</span>
+            <img class="navbar__icon" src="../../assets/user.svg" alt="user" />
+        </button>
+        <button class="navbar__button" (click)="logout()">
+            <img class="navbar__icon" src="../../assets/logout.svg" alt="user" />
+        </button>
+    </div>
+
+    <div *ngIf="status=='prodavac'" class="navbar">
+
+        <button routerLink="noviproizvod" class="navbar__button">
+            <span class="navbar__label">Nov proizvod</span>
+        </button>
+
+         <button routerLink="prodavac" class="navbar__button">
+            <span class="navbar__label">Narudzbine</span>
+        </button>
+        
         <button routerLink="nalog" class="navbar__button">
             <span class="navbar__label">Marko</span>
             <img class="navbar__icon" src="../../assets/user.svg" alt="user" />

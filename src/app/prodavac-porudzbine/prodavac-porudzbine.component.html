@@ -1,1 +1,21 @@
-<p>prodavac-porudzbine works!</p>
+<div class="black-container container">
+    <div class="table">
+        <div class="header">Porudzbina</div>
+        <div class="header">Vrednost</div>
+        <div class="header">&nbsp;</div>
+        <div class="header">&nbsp;</div>
+
+        <div class="table__row" *ngFor="let order of orders">
+            <div>
+               <div class="item" *ngFor="let item of order.items">
+                   <span>x{{item.kolicina}}</span>
+                   <span>{{item.name}}</span>
+                   <span>{{item.cena}} din</span>
+               </div>
+            </div>
+            <div>{{order.sum}} din</div>
+            <div><button class="button" (click)="addInfo('prihvacena', order)">Prihvati</button></div>
+            <div><button class="button" (click)="addInfo('odbijena', order)">Odbij</button></div>
+        </div>
+    </div>
+</div>
