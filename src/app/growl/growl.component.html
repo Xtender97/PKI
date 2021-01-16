@@ -1,0 +1,5 @@
+<div *ngIf="!isEmpty()" class="growl" [ngClass]="'growl--' + messages[0].type">
+    <div class="growl__title">{{messages[0].title}}</div>
+    <div class="growl__message">{{messages[0].message}}</div>
+    <div class="growl__close" (click)="empty()">&#10005;</div>
+</div>

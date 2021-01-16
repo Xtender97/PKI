@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { GrowlService } from '../services/growl.service';
 
 @Component({
   selector: 'app-kupac-detalji-proizvoda',
@@ -11,7 +12,8 @@ export class KupacDetaljiProizvodaComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private growlService: GrowlService
   ) { }
 
   imgUrl: string = '';
@@ -29,5 +31,6 @@ export class KupacDetaljiProizvodaComponent implements OnInit {
   addToCart() {
     console.log(this.kolicina);
     this.cartService.addProduct({imgUrl:this.imgUrl, name:this.name, cena:this.cena, kolicina:this.kolicina});
+    this.growlService.addMessage('success', 'Dodato u korpu', this.name + ' dodat u korpu!');
   }
 }

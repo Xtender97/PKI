@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { GrowlService } from '../services/growl.service';
 
 @Component({
   selector: 'app-kupac-korpa',
@@ -11,7 +12,8 @@ export class KupacKorpaComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private growlService: GrowlService
   ) { }
 
   products: {
@@ -38,6 +40,7 @@ export class KupacKorpaComponent implements OnInit {
     this.cartService.emptyCart();
     this.products = [];
     this.priceSum = 0;
+    this.growlService.addMessage('success', 'Porudzbena uspesna!', '');
     this.router.navigate(['kupac']);
   }
 

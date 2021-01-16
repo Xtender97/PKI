@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { GrowlService } from '../services/growl.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private growlService: GrowlService,
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,9 @@ export class LoginComponent implements OnInit {
    this.loggedInType = this.authService.login(this.username, this.password);
    if (this.loggedInType) {
     this.router.navigate([this.loggedInType]);
+   }
+   else {
+    this.growlService.addMessage('error', 'Invalid credentials', '');
    }
   }
 

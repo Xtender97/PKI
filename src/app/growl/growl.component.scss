@@ -1,0 +1,40 @@
+@import "../../variables";
+.growl {
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: #423c3c;
+    width: 30rem;
+
+    &--error {
+        background-color: #f08080;
+    }
+
+    &--info {
+        background-color: #81c7f5;
+        color: #302b2b;
+    }
+
+    &--success {
+        background-color: #8feeae;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__close {
+        font-family: $font-secondary;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}

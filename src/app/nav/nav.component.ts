@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { CartService } from '../services/cart.service';
+import { GrowlService } from '../services/growl.service';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,8 @@ export class NavComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private cartService: CartService
+    private cartService: CartService,
+    public growlService: GrowlService,
   ) { }
 
   status:string = '';

@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { KupacDetaljiProizvodaComponent } from './kupac-detalji-proizvoda/kupac-detalji-proizvoda.component';
 import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
 import { NalogComponent } from './nalog/nalog.component';
+import { GrowlComponent } from './growl/growl.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NalogComponent } from './nalog/nalog.component';
     RegisterComponent,
     KupacDetaljiProizvodaComponent,
     KupacKorpaComponent,
-    NalogComponent
+    NalogComponent,
+    GrowlComponent
   ],
   imports: [
     BrowserModule,
