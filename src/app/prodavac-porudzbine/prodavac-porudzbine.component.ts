@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 import { GrowlService } from '../services/growl.service';
 
 @Component({
@@ -9,40 +10,20 @@ import { GrowlService } from '../services/growl.service';
 export class ProdavacPorudzbineComponent implements OnInit {
 
   constructor(
-    private growlService: GrowlService
+    private growlService: GrowlService,
+    private cartService: CartService,
   ) { }
 
-  orders: {
-    items: {
-      kolicina: string,
-      name: string,
-      cena: string
-    }[],
-    sum: string
-  }[] =
-    [
-      {
-        items: [
-          { kolicina: '1', name: 'Livadski med', cena: '1500' },
-          { kolicina: '1', name: 'Bagremov med', cena: '2000' }
-
-        ],
-        sum: '3500'
-      }, 
-      {
-        items: [
-          { kolicina: '1', name: 'Livadski med', cena: '1500' },
-        ],
-        sum: '1500'
-      }
-    ];
+  orders: any[];
+ 
 
   ngOnInit(): void {
+    this.orders = this.cartService.getOrders();
   }
 
   addInfo(action, order){
     this.growlService.addMessage('info', `Uspesno ${action} porudzbina!`, "");
-    this.orders = this.orders.filter(item => item != order);
+    this.orders = this.cartService.removeOrder(order);
   }
 
 }

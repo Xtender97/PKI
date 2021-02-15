@@ -1,9 +1,9 @@
 <div class="black-container container">
     <h2 class="title">Informacije</h2>
-    <input type="text" class="input" placeholder="Ime">
-    <input type="text" class="input" placeholder="Prezime">
-    <input type="text" class="input" placeholder="Adresa">
-    <input type="text" class="input" placeholder="Broj Telefona">
-    <input type="password" class="input" placeholder="Lozinka">
-    <button class="button">Izmeni</button>
+    <input type="text" class="input" [(ngModel)]="user.ime" placeholder="Ime">
+    <input type="text" class="input" [(ngModel)]="user.prezime" placeholder="Prezime">
+    <input type="text" class="input" [(ngModel)]="user.adresa" placeholder="Adresa">
+    <input type="text" class="input" [(ngModel)]="user.brojTelefona" placeholder="Broj Telefona">
+    <input type="password" class="input" [(ngModel)]="user.password" placeholder="Lozinka">
+    <button class="button" (click)="saveUser()">Izmeni</button>
 </div>

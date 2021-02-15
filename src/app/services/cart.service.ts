@@ -15,8 +15,32 @@ export class CartService {
     kolicina: string
   }[] = [];
 
-  notEmptyCart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  orders: {
+    items: {
+      kolicina: string,
+      name: string,
+      cena: string
+    }[],
+    sum: string
+  }[] =
+    [
+      {
+        items: [
+          { kolicina: '1', name: 'Livadski med', cena: '1500' },
+          { kolicina: '1', name: 'Bagremov med', cena: '2000' }
 
+        ],
+        sum: '3500'
+      }, 
+      {
+        items: [
+          { kolicina: '1', name: 'Livadski med', cena: '1500' },
+        ],
+        sum: '1500'
+      }
+    ];
+
+  notEmptyCart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   addProduct(product){
     this.products.push(product);
@@ -34,5 +58,18 @@ export class CartService {
 
   getProducts(){
     return this.products;
+  }
+
+  saveOrder(order) {
+    this.orders.push(order);
+  }
+
+  getOrders() {
+    return this.orders;
+  }
+
+  removeOrder(order) {
+    this.orders = this.orders.filter(item => item != order);
+    return this.orders;
   }
 }

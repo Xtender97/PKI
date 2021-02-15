@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-kupac-proizvodi',
@@ -9,17 +10,19 @@ import { Router } from '@angular/router';
 export class KupacProizvodiComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private productsService: ProductsService
   ) { }
 
+  products:any[];
+
   ngOnInit(): void {
+    this.products = this.productsService.getProducts();
   }
 
-  goToDetails(event){
-    let imgUrl = event.target.attributes.src.textContent;
-    let name = event.target.parentElement.nextSibling.textContent;
-    let cena = event.target.parentElement.nextSibling.nextSibling.textContent;
-    this.router.navigate(['detalji'], { queryParams: {imgUrl: imgUrl, name:name, cena:cena}});
+  goToDetails(product){
+    this.productsService.setSelectedProduct(product);
+    this.router.navigate(['detalji']);
   }
 
 

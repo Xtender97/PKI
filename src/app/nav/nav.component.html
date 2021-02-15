@@ -2,12 +2,15 @@
     <img routerLink="" class="logo" src="../../assets/logo.jpg" alt="Logo" />
     <h1 routerLink="" class="title">Medenjaci</h1>
     <div *ngIf="status=='kupac'" class="navbar">
+        <button routerLink="kupac" class="navbar__button">
+            <span class="navbar__label">Proizvodi</span>
+        </button>
         <button routerLink="cart" class="navbar__button">
             <span class="navbar__label" [ngClass]="numberOfProducts !== '0' ? 'cart--full': '' ">{{numberOfProducts}}</span>
             <img class="navbar__icon" src="../../assets/shopping-cart-empty-side-view.svg" alt="user" />
         </button>
         <button routerLink="nalog" class="navbar__button">
-            <span class="navbar__label">Marko</span>
+            <span class="navbar__label">{{user.ime}}</span>
             <img class="navbar__icon" src="../../assets/user.svg" alt="user" />
         </button>
         <button class="navbar__button" (click)="logout()">
@@ -26,7 +29,7 @@
         </button>
         
         <button routerLink="nalog" class="navbar__button">
-            <span class="navbar__label">Marko</span>
+            <span class="navbar__label">{{user.ime}}</span>
             <img class="navbar__icon" src="../../assets/user.svg" alt="user" />
         </button>
         <button class="navbar__button" (click)="logout()">

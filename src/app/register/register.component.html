@@ -8,7 +8,7 @@
     <input type="text" class="input" placeholder="Korisnicko ime" [(ngModel)]="user.username">
     <input type="password" class="input" placeholder="Lozinka" [(ngModel)]="user.password">
     <div class="select-wrapper">
-        <select class="input input--select" name="type" id="cars">
+        <select class="input input--select" name="type" id="cars" [(ngModel)]="user.tip">
             <option value="kupac">Kupac</option>
             <option value="prodavac">Prodavac</option>
         </select>

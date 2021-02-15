@@ -18,11 +18,17 @@ export class NavComponent implements OnInit {
 
   status:string = '';
   numberOfProducts: string = '';
+  user:any;
 
   ngOnInit(): void {
+    this.authService.initAuthentication();
     this.authService.getStatusAsObservable().subscribe(
       (status) => this.status = status
     );
+    this.authService.getUserAsObservable().subscribe(data => {
+      this.user = data;
+    });
+    console.log(this.user);
 
     this.cartService.notEmptyCartAsObservable().subscribe(
       (numberOfProducts) => this.numberOfProducts = numberOfProducts.toString(10)

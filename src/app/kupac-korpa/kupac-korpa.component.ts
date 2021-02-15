@@ -28,7 +28,7 @@ export class KupacKorpaComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.cartService.getProducts();
     this.products = this.products.map(product => {
-      let acctulaPrice:any  = product.cena.slice(0, product.cena.length - 3);
+      let acctulaPrice:any = product.cena;
       acctulaPrice *= +product.kolicina;
       product.cena = acctulaPrice.toString(10);
       return product;
@@ -37,11 +37,26 @@ export class KupacKorpaComponent implements OnInit {
   }
 
   order(){
+    this.cartService.saveOrder(
+      {
+        items: this.products.map(product => {
+          return {kolicina: product.kolicina, cena: product.cena, name: product.name}}),
+        sum: this.products.reduce((sum, product) => sum + +product.cena, 0)
+      });
     this.cartService.emptyCart();
     this.products = [];
     this.priceSum = 0;
     this.growlService.addMessage('success', 'Porudzbena uspesna!', '');
     this.router.navigate(['kupac']);
   }
+
+  // {
+  //   items: [
+  //     { kolicina: '1', name: 'Livadski med', cena: '1500' },
+  //     { kolicina: '1', name: 'Bagremov med', cena: '2000' }
+
+  //   ],
+  //   sum: '3500'
+  // }
 
 }

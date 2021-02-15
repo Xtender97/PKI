@@ -1,16 +1,14 @@
 <div class="black-container container">
     <div class="detail__item item">
         <div class="item__img-container">
-            <img src="{{imgUrl}}" alt="image 4" class="item__img">
+            <img src="{{product.url}}" alt="image 4" class="item__img">
         </div>
-        <h3 class="item__name">{{name}}</h3>
-        <h2 class="item__price">{{cena}}</h2>
+        <h3 class="item__name">{{product.ime}}</h3>
+        <h2 class="item__price">{{product.cena}} din</h2>
     </div>
     <div class="detail">
-        <h1 class="detail__title">{{name}}</h1>
-        <p class="detail__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vel velit laudantium sed
-            tempora saepe. Ipsa obcaecati reprehenderit unde temporibus amet ullam, impedit deserunt, omnis maxime, iste
-            repudiandae accusantium totam?</p>
+        <h1 class="detail__title">{{product.ime}}</h1>
+        <p class="detail__desc">{{product.opis}}</p>
         <div class="detail__order">
             <input type="text" class="input" placeholder="Kolicina" [(ngModel)]="kolicina">
             <button class="button" (click)="addToCart()">Dodaj u korpu</button>

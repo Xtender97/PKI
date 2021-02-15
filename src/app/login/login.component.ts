@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   login(){
    this.loggedInType = this.authService.login(this.username, this.password);
+   console.log(this.loggedInType);
    if (this.loggedInType) {
     this.router.navigate([this.loggedInType]);
    }
